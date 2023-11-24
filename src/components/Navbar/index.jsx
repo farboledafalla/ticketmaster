@@ -10,8 +10,6 @@ const Navbar = () => {
       setSearch(evt.target.value);
    };
 
-   console.log(search);
-
    // El Navbar tiene el texto (Mi boletera) y una caja de texto
    return (
       <div>
