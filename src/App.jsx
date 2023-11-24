@@ -1,6 +1,7 @@
 import './App.css';
 import Events from './components/Events/Index';
 import Navbar from './components/Navbar';
+import SignupForm from './components/SignupForm';
 
 import { useState } from 'react';
 
@@ -23,8 +24,9 @@ function App() {
    // Al Padre rerenderearse, se puede pasar el estado 'searchTerm' al hijo <Events /> para que filtre allá la busqueda
    return (
       <>
-         <Navbar onSearch={handleNavbarSearch} />
-         <Events searchTerm={searchTerm} />
+         {/*<Navbar onSearch={handleNavbarSearch} />
+         <Events searchTerm={searchTerm} />*/}
+         <SignupForm />
       </>
    );
 }
