@@ -1,14 +1,19 @@
 import './App.css';
 import Events from './components/Events/Index';
 import Navbar from './components/Navbar';
-import SignupForm from './components/SignupForm';
+//import SignupForm from './components/SignupForm';
 
-import { useState } from 'react';
+import { useState /*useEffect*/ } from 'react';
 
 // Usamos los componentes (<Navbar /> y <Events />)
 function App() {
    // Estado para manejar el valor de lo que se escribe en la caja al persionar 'Enter'
    const [searchTerm, setSearchTerm] = useState('');
+
+   // No se recomienda usar un (useEffect) ejecutandose con un evento porque el evento (handleNavbarSearch) es el que tiene que realizar eso
+   /*useEffect(() => {
+      console.log('useEffect_');
+   }, [searchTerm]);*/
 
    // Manejador del evento que viene desde el Componente <Navbar /> y recibe el texto de la caja y setea el estado (searchTerm) para pasarlo a <Events />
    // Recibe el estado del hijo desde el componente <Navbar /> en esta parte (onSearch(search))
@@ -24,9 +29,9 @@ function App() {
    // Al Padre rerenderearse, se puede pasar el estado 'searchTerm' al hijo <Events /> para que filtre allá la busqueda
    return (
       <>
-         {/*<Navbar onSearch={handleNavbarSearch} />
-         <Events searchTerm={searchTerm} />*/}
-         <SignupForm />
+         <Navbar onSearch={handleNavbarSearch} />
+         <Events searchTerm={searchTerm} />
+         {/*<SignupForm />*/}
       </>
    );
 }
