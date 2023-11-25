@@ -20,6 +20,7 @@ const SignupForm = () => {
       console.log(data);
    };
 
+   // Mostrar los errores
    console.log(errors);
 
    return (

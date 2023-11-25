@@ -1,9 +1,14 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 // Recibe el 'prop' enviado desde 'App.jsx'
 const Navbar = ({ onSearch }) => {
    // Estado para manejar la caja de texto
    const [search, setSearch] = useState('');
+
+   // El método (onSearch) se produce cuando se produce un evento del Padre al Hijo y este se produce cuando se ejecuta en el App.jsx (handleNavbarSearch), es decir, cuando el usuario de 'Enter'
+   useEffect(() => {
+      console.log('1010 effect');
+   }, [search, onSearch]);
 
    // Manejador de eventos de la caja de texto
    const handleInputChange = (evt) => {
